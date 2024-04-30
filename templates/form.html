@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2 class="mb-4">{{ form_title }}</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome do Filme:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do filme" value="{{ movie.name }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="image_url" class="form-label">URL da Imagem:</label>
+            <input type="text" class="form-control" id="image_url" name="image_url" placeholder="Digite a URL da imagem do filme" value="{{ movie.image_url }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="details_url" class="form-label">URL de Detalhes:</label>
+            <input type="text" class="form-control" id="details_url" name="details_url" placeholder="Digite a URL para mais detalhes do filme" value="{{ movie.details_url }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="runtime" class="form-label">Duração (minutos):</label>
+            <input type="number" class="form-control" id="runtime" name="runtime" placeholder="Digite a duração do filme em minutos" value="{{ movie.runtime }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Resenha do filme:</label>
+            <textarea class="form-control" id="description" name="description" rows="3" placeholder="Digite a resenha do filme">{{ movie.description | default('') }}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ button_label }}</button>
+    </form>
+</div>
+{% endblock %}
+

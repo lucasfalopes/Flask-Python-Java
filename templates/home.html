@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h1 class="text-center mb-4">Bem-vindo ao Cinema Club</h1>
+    <p class="text-center lead">Explore nosso catálogo de filmes e gerencie sua coleção de maneira fácil e interativa.</p>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6 text-center">
+            <h2>O que você pode fazer aqui?</h2>
+            <p class="mt-3">
+                Na aba <strong>Movies</strong>, você pode visualizar todos os filmes disponíveis em nossa plataforma. Cada entrada na lista oferece opções para visualizar mais detalhes sobre o filme ou editá-lo, caso queira atualizar alguma informação.
+            </p>
+            <p>
+                Se desejar adicionar um novo filme ao nosso catálogo, visite a aba <strong>Add Movies</strong>. Aqui, você poderá inserir informações como o nome do filme, uma imagem representativa, detalhes adicionais e a duração do filme.
+            </p>
+            <a href="/movies" class="btn btn-primary mt-2">Ver Filmes</a>
+            <a href="/add" class="btn btn-success mt-2">Adicionar Filme</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

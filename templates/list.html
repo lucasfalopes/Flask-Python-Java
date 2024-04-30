@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h1 class="text-center mb-4">Lista de Filmes</h1>
+    <div class="row" id="movies-container">
+        <!-- Os filmes serão inseridos dinamicamente aqui -->
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='java.js') }}"></script>
+
+<!-- Bootstrap Modal para Confirmação de Deleção -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirmar Deleção</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Você quer mesmo deletar "<span id="movieName"></span>"?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <button type="button" class="btn btn-danger" onclick="confirmDelete()">Sim</button>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Bootstrap Modal para Detalhes do Filme -->
+<div class="modal fade" id="detailsModal" tabindex="-1" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">Detalhes do Filme</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="detailImage" src="" class="img-fluid" alt="Movie Poster">
+                <h3 id="detailName"></h3>
+                <p><strong>Duração:</strong> <span id="detailRuntime"></span> minutos</p>
+                <p><strong>Resenha:</strong> <span id="detailDescription"></span></p>
+                <!-- Botão que leva ao link de detalhes do filme -->
+                <a href="#" id="detailLink" class="btn btn-primary mt-3">Ver Mais Detalhes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
